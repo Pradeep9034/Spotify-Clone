@@ -139,9 +139,9 @@ const LoggedInContainer =({children,curActiveScreen})=>{
                                 <TextWithHover displayText={"Download"}/>
                                 <div className="h-1/2 border-r border white"></div>
                             </div>
-                            <div className="w-1/3 flex justify-around h-full items-center" onClick={()=>{navigate("/uploadsong")}}>
+                            <div className="w-2/5 flex justify-around h-full items-center" onClick={()=>{navigate("/uploadsong")}}>
                                 <TextWithHover displayText={"Upload Song"} />
-                                <div className=" bg-white h-10 w-10 flex items-center justify-center rounded-full font-semibold cursor-pointer">PK</div>
+                                <div className=" bg-white h-10 w-20 ml-1 mr-1.5 flex items-center justify-center rounded-full font-semibold cursor-pointer" onClick={()=>{removeCookie('token', { path: '/' });}}>Log Out</div>
                             </div>
                         </div>
                     </div>
