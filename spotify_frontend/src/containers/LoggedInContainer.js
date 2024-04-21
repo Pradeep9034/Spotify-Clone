@@ -9,7 +9,7 @@ import CreatePlaylistModal from "../modals/CreatePlaylistModal";
 import AddToPlaylistModal from "../modals/AddToPlaylistModal";
 import { makeAuthenticatedPOSTRequest } from "../utils/serverHelpers";
 import { useNavigate } from "react-router-dom";
-
+import { useCookies, withCookies } from 'react-cookie';
 
 
  {/* <Card title="Peaceful Piano" description="Relax and indulge with beautiful piano pieces" imgUrl="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1546&q=80"/>
@@ -25,7 +25,7 @@ const LoggedInContainer =({children,curActiveScreen})=>{
     const [createPlaylistModalOpen, setCreatePlaylistModalOpen]=useState(false);
     const [addToPlaylistModalOpen, setAddToPlaylistModalOpen]=useState(false);
     const {currentSong,setCurrentSong ,soundPlayed,setSoundPlayed,isPaused,setIsPaused,isMuted,setIsMuted}=useContext(songContext);
-    
+    const [cookies,setCookie,removeCookie]=useCookies(["token"]);
     
 
     const firstUpdate=useRef(true);
